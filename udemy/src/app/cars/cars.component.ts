@@ -6,15 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent implements OnInit {
-  addCarStatus: string = '';
-  inputText: string = 'Значение по умолчанию';
+  carName:string = '';
+  addCarStatus = false;
   ngOnInit() {
   }
 
   addCar() {
-    this.addCarStatus = 'Машина добавлена!';
-  }
-  onKeyUp(event: KeyboardEvent) {
-    this.inputText = (<HTMLInputElement>event.target).value;
+    this.addCarStatus = true;
   }
 }
