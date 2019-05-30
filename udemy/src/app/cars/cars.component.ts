@@ -8,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CarsComponent implements OnInit {
   carName: string = '';
   addCarStatus: boolean = false;
-  cars: Array<string> = ['Ford', 'Audi', 'BMW'];
-  items: Array<object> = [{id:3, name:'item3'}, {id:2, name:'item2'}, {id:1, name:'item1'}];
+  cars: Array<string> = ['Ford', 'Audi', 'BMW', 'Mazda', 'Lada', 'Bently'];
   ngOnInit() {
   }
 
@@ -17,5 +16,8 @@ export class CarsComponent implements OnInit {
     this.addCarStatus = true;
     this.cars.push(this.carName);
     this.carName = '';
+  }
+  setBigCarText(car: string): boolean {
+    return car.length > 4 ? true : false;
   }
 }
