@@ -11,29 +11,39 @@ export class CarsComponent implements OnInit {
     {
       name: 'Ford',
       year: 2017
-    },
-    {
-      name: 'Audi',
-      year: 2015
-    },
-    {
-      name: 'Mazda',
-      year: 2010
-    },
-    {
-      name: 'Lada',
-      year: 2018
-    },
-    {
-      name: 'Bently',
-      year: 2014
     }
+    // ,
+    // {
+    //   name: 'Audi',
+    //   year: 2015
+    // },
+    // {
+    //   name: 'Mazda',
+    //   year: 2010
+    // },
+    // {
+    //   name: 'Lada',
+    //   year: 2018
+    // },
+    // {
+    //   name: 'Bently',
+    //   year: 2014
+    // }
   ];
-  dates: Array<Date> = [new Date(2015, 10, 5), new Date(2011, 3, 10), new Date(2017, 7, 14), new Date(2000, 9, 4)]
+  // dates: Array<Date> = [new Date(2015, 10, 5), new Date(2011, 3, 10), new Date(2017, 7, 14), new Date(2000, 9, 4)];
+
   ngOnInit() {
   }
-  updateCarList(car:{name:string, year:number})
-  {
+
+  updateCarList(car: { name: string, year: number }): void {
     this.cars.push(car);
+  }
+
+  changeCarName(): void {
+    this.cars[0].name = 'New car name!';
+  }
+
+  deleteCar(): void {
+    this.cars.splice(0, 1);
   }
 }
