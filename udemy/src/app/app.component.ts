@@ -31,6 +31,15 @@ export class AppComponent {
   //   }
   // }
 
-  num = 2;
+  // num = 2;
 
+  searchCar = '';
+  cars = [
+    { name: 'Ford', descr: 'WFM 1' },
+    { name: 'Mazda', descr: 'WFM 2' },
+    { name: 'Bently', descr: 'WFM 3' },
+    { name: 'Audi', descr: 'WFM 4' },
+    { name: 'Mercedes', descr: 'WFM 5' },
+    { name: 'BMW', descr: 'WFM 6' }
+  ];
 }
