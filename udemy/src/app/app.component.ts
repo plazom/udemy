@@ -42,4 +42,10 @@ export class AppComponent {
     { name: 'Mercedes', descr: 'WFM 5' },
     { name: 'BMW', descr: 'WFM 6' }
   ];
+  addCar():void{
+    this.cars.push({
+      name:'New Car',
+      descr:'WFM'
+    });
+  }
 }
