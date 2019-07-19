@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { of } from "rxjs";
+import { delay } from 'rxjs/internal/operators';
 
 @Component({
   selector: 'app-root',
@@ -42,6 +44,11 @@ export class AppComponent {
     { name: 'Mercedes', descr: 'WFM 5' },
     { name: 'BMW', descr: 'WFM 6' }
   ];
+
+  //title = '';
+  //asyncTitle = of('Async title 3 seconds').pipe(delay(3000)).subscribe((str) =>this.title = str);
+  asyncTitle = of('Async title 3 seconds').pipe(delay(3000));
+
   addCar():void{
     this.cars.push({
       name:'New Car',

@@ -75,6 +75,7 @@
 <div class="container">
   <div class="row">
     <div>
+      <h1>{{asyncTitle | async}}</h1>
       <input type='text' class='form-control' [(ngModel)]="searchCar">
       <button class="btn btn-primary" (click)="addCar()">Добавить</button>
       <hr>
