@@ -1,4 +1,7 @@
 {
+  "title": {
+    "value": "Менеджер машин"
+  },
   "cars": [
     {
       "name": "Ford",
@@ -12,7 +15,7 @@
     },
     {
       "name": "Audi",
-      "color": "blue",
+      "color": "green",
       "id": 6
     },
     {
