@@ -22,8 +22,14 @@ import {
         width: '300px',
         height: '300px'
       })),
-      transition('start => end', animate(1500)),
-      transition('end => start', animate('800ms 0.5s ease-out'))
+      state('active', style({
+        width: '170px',
+        height: '170px',
+        backgroundColor: 'orange'
+      })),
+      transition('start <=> end', animate('800ms ease-in')),
+      transition('start => active', animate(400)),
+      transition('active => end', animate(400))
     ])
   ]
 })
