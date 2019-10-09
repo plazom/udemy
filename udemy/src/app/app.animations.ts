@@ -7,10 +7,8 @@ import {
 } from '@angular/animations';
 
 export const divTrigger = trigger('divTrigger', [
-  state('show', style({
-
-  })),
-  transition('void => show', [
+  // void => *
+  transition(':enter', [
     style({
       opacity: 0
     }),
@@ -18,7 +16,19 @@ export const divTrigger = trigger('divTrigger', [
       opacity: 1
     }))
   ]),
-  transition('show => void', animate(500, style({
+  // * => void
+  transition(':leave', animate(500, style({
     opacity: 0
   })))
+]);
+
+export const changeWidthTrigger = trigger('changeWidth', [
+  transition('* => *', [
+    animate(1000, style({
+      height: '10px'
+    })),
+    animate(1000, style({
+      height: '*'
+    }))
+  ])
 ]);
