@@ -1,8 +1,11 @@
-for (var i = 0; i < 5; i++) {
-    setTimeout(function () {
-        console.log(i);
-    }, 3000);
-}
+const obj = {
+    name: 'WFM',
 
-const PI = 3.14;
-let a = 1;
+    logName: function () {
+        setTimeout(() => {
+            console.log('Name: ', this.name);
+        }, 2000)
+    }
+};
+
+obj.logName();
