@@ -1,16 +1,15 @@
 let fib = {
-    [Symbol.iterator]() {
-        let pre = 0, cur = 1;
-        return {
-            next() {
-                [pre, cur] = [cur, pre + cur];
-                return {value: cur, done: false};
-            }
+    *[Symbol.iterator]() {
+        let cur = 1, pre = 0;
+        for (;;) {
+            [cur, pre] = [cur + pre, cur];
+            yield cur;
         }
     }
 };
 
+
 for (let n of fib) {
-    if (n > 1500) break;
+    if (n > 3000) break;
     console.log(n);
 }
