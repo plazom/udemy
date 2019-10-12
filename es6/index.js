@@ -1,11 +1,8 @@
-const obj = {
-    name: 'WFM',
+const c = 90;
+const c2 = () => 200;
 
-    logName: function () {
-        setTimeout(() => {
-            console.log('Name: ', this.name);
-        }, 2000)
-    }
+const func = (a = 20, b = a + c2()) => {
+    return a + b;
 };
 
-obj.logName();
+console.log(func(30));
