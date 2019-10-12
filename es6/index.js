@@ -1,9 +1,7 @@
-let array = ['WFM', 30];
+function logString(num, ...args) {
+    console.log(num, args);
+}
 
-//let name = array[0];
-//let age = array[1];
-//let color = array[2];
-
-let [, , color='red'] = array;
-
-console.log(color);
+let spreadArray = ['WFM', 'WFM2', 'WFM3', 'WFM4'];
+logString(20, ...spreadArray);
+// logString(20, 'WFM', 'WFM2', 'WFM3', 'WFM4');
