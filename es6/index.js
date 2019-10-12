@@ -1,7 +1,15 @@
-function logString(num, ...args) {
-    console.log(num, args);
-}
+let name = 'WFM';
 
-let spreadArray = ['WFM', 'WFM2', 'WFM3', 'WFM4'];
-logString(20, ...spreadArray);
-// logString(20, 'WFM', 'WFM2', 'WFM3', 'WFM4');
+//let str = 'Hello ' + name + ', glad to \'see\' you!';
+//let str = `Hello ${name}, glad to "see" you! ${5 + 10}`;
+
+let html = `
+    <div>
+        <h1>${name}</h1>
+        <span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, tempore.</p>
+        </span>
+    </div>
+`;
+
+console.log(html);
