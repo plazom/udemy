@@ -1,25 +1,7 @@
-class Car {
-    constructor(name) {
-        console.log('Car constructor');
-        this.name = name;
-    }
+let set = new WeakSet();
 
-    logName() {
-        console.log('Car name is: ', this.name);
-    }
-}
-
-class BMW extends Car {
-    constructor(name) {
-        super(name);
-
-        console.log('BMW constructor');
-    }
-
-    logName() {
-        super.logName();
-    }
-}
-
-let bmw = new BMW('x6');
-bmw.logName();
+let key = {};
+set.add(key);
+console.log(set.size);
+key = null;
+console.log(set.size);
