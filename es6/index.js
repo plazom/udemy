@@ -1,17 +1,29 @@
-// let obj1 = {a: 1};
-// let obj2 = {b: 2, c: 3};
-//
-// let obj3 = Object.assign({d: 4}, obj1, obj2);
-//
-// console.log('Obj1', obj1);
-// console.log('Obj2', obj2);
-// console.log('Obj3', obj3);
+// http://date.jsontest.com/
 
-// let findedItem = [1, 2, 3, 4].find(x => x > 2);
-// console.log(findedItem);
+import $ from 'jquery';
 
-let str = 'Hello!';
+let promise = new Promise((resolve, reject) => {
+    $.ajax({
+        url: 'http://d1ate.jsontest.com/',
+        dataType: 'json',
+        success: function(response) {
+            resolve(response);
+        },
+        error: function(error) {
+            reject(error);
+        }
+    });
+});
 
-console.log('Repeat: ', str.repeat(3));
-console.log('StartsWith: ', str.startsWith('el', 1));
-console.log('Includes: ', str.includes('llo', 2));
+
+promise
+    .then((data) => {
+        return data.date;
+    })
+    .then((date) => {
+        console.log('Date: ', date);
+    })
+    .catch((error) => {
+        console.info('Server error');
+    });
+
