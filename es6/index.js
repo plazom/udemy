@@ -1,7 +1,7 @@
-let set = new WeakSet();
+let map = new WeakMap();
 
 let key = {};
-set.add(key);
-console.log(set.size);
+map.set(key, 'key');
+console.log('Size: ', map.size);
 key = null;
-console.log(set.size);
+console.log('Size: ', map.size);
