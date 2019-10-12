@@ -1,7 +1,3 @@
-let map = new WeakMap();
+import Car from './extra';
 
-let key = {};
-map.set(key, 'key');
-console.log('Size: ', map.size);
-key = null;
-console.log('Size: ', map.size);
+var car = new Car();
