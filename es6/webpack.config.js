@@ -16,6 +16,8 @@ module.exports = {
         new HtmlPlugin()
     ],
 
+    watch: true,
+
     module: {
         rules: [
             {
