@@ -1,22 +1,33 @@
-function genericGetter<T>(data: T): T {
-    return data;
-}
+// function logger(constrFn: Function) {
+//     console.log(constrFn);
+// }
+//
+// function shouldLog(flag: boolean): any {
+//     return flag ? logger : null;
+// }
+//
+// @shouldLog(true)
+// class User {
+//     constructor(public name: string, public age: number) {
+//         console.log('I am  new user');
+//     }
+// }
 
-let newGenericFunction: <T>(data: T) => T = genericGetter;
+// ===========================================
 
-// =============================================
-
-class Multiply<T extends number | string> {
-    constructor(private a: T, private b: T) {}
-
-    public getResult(): number {
-        return +this.a * +this.b;
+function addShowAbility(constructorFn: Function) {
+    constructorFn.prototype.showHtml = function() {
+        const pre = document.createElement('pre');
+        pre.innerHTML = JSON.stringify(this);
+        document.body.appendChild(pre);
     }
 }
 
-const mNum = new Multiply<number>(10, 5);
-console.log('Number: ', mNum.getResult());
+@addShowAbility
+class User {
+    constructor(public name: string, public age: number, public job: string) {}
+}
 
-const mStr = new Multiply<string>('50', '60');
-console.log('String: ', mStr.getResult());
-
+let user = new User('WFM', 20, 'Frontend');
+console.log(user);
+(<any>user).showHtml();
