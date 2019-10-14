@@ -1,49 +1,41 @@
-class User {
-    private isTeacher: boolean;
-    protected age: number = 30;
+// interface ILength {
+//     length: number;
+// }
+//
+// function getLength(variable: ILength): void {
+//     console.log('getLength', variable.length);
+// }
+//
+// const box = {
+//     name: 'WFM',
+//     length: 20
+// };
+//
+// getLength(box);
+// getLength([1, 2, 3]);
 
-    constructor(public name: string, public job: string) {
-    }
 
-    public getAge(): string {
-        return this.age + '';
-    }
+interface IUser {
+    name: string;
+    age?: number;
+    logInfo(info: string): void;
 }
 
-class WFM extends User {
-    constructor(job: string) {
-        super('WFM', job);
-        this.age = 100;
-    }
-
-    getAge(): string {
-        return 'Hello ' + this.age;
-    }
+interface IGetYear {
+    getYear(): number;
 }
 
-const user = new User('WFM', 'Frontend');
-const wfm = new WFM('Frontend');
+class User implements IUser, IGetYear {
+    name: string = 'user';
+    job: string;
+    newAge: number;
 
-
-abstract class Car {
-    model: string;
-    year: number = 2010;
-
-    abstract logInfo(info: string): void;
-
-    getCarYear(): number {
-        return this.year;
-    }
-}
-
-class Mercedes extends Car {
     logInfo(info: string): void {
         console.log(info);
     }
-}
 
-const car = new Mercedes();
-console.log(car);
-car.logInfo('Info');
-console.log(car.getCarYear());
+    getYear(): number {
+        return 200;
+    }
+}
 
