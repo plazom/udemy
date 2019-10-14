@@ -1,11 +1,20 @@
 "use strict";
-var Job;
-(function (Job) {
-    Job[Job["Frontend"] = 0] = "Frontend";
-    Job[Job["Backend"] = 50] = "Backend";
-    Job[Job["Designer"] = 51] = "Designer";
-})(Job || (Job = {}));
-var job = Job.Backend;
-console.log(job);
-var job2 = Job.Designer;
-console.log(job2);
+var User = (function () {
+    function User(name, job) {
+        this.name = name;
+        this.job = job;
+        this.age = 30;
+    }
+    User.prototype.getAge = function () {
+        return this.age;
+    };
+    User.prototype.setTitle = function (title) {
+        console.log(this.isTeacher);
+        this.isTeacher = title;
+        console.log(this.isTeacher);
+        console.log(this.getAge());
+    };
+    return User;
+}());
+var user = new User('WFM', 'Frontend');
+user.setTitle(false);

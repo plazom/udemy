@@ -1,21 +1,22 @@
-enum Job {
-    Frontend,
-    Backend = 50,
-    Designer
+class User {
+    private isTeacher: boolean;
+    protected age: number = 30;
+
+    constructor(public name: string, public job: string) {
+    }
+
+    private getAge(): number {
+        return this.age;
+    }
+
+    public setTitle(title: boolean) {
+        console.log(this.isTeacher);
+        this.isTeacher = title;
+        console.log(this.isTeacher);
+        console.log(this.getAge());
+    }
+
 }
 
-const job: Job = Job.Backend;
-console.log(job);
-
-const job2: Job = Job.Designer;
-console.log(job2);
-
-function throwNewError(err: string): never {
-    throw new Error(err);
-}
-
-let newVar;
-newVar = null;
-
-let myNumber: number | null = 20;
-myNumber = null;
+const user = new User('WFM', 'Frontend');
+user.setTitle(false);
