@@ -1,41 +1,22 @@
-// interface ILength {
-//     length: number;
-// }
-//
-// function getLength(variable: ILength): void {
-//     console.log('getLength', variable.length);
-// }
-//
-// const box = {
-//     name: 'WFM',
-//     length: 20
-// };
-//
-// getLength(box);
-// getLength([1, 2, 3]);
-
-
-interface IUser {
-    name: string;
-    age?: number;
-    logInfo(info: string): void;
+function genericGetter<T>(data: T): T {
+    return data;
 }
 
-interface IGetYear {
-    getYear(): number;
-}
+let newGenericFunction: <T>(data: T) => T = genericGetter;
 
-class User implements IUser, IGetYear {
-    name: string = 'user';
-    job: string;
-    newAge: number;
+// =============================================
 
-    logInfo(info: string): void {
-        console.log(info);
-    }
+class Multiply<T extends number | string> {
+    constructor(private a: T, private b: T) {}
 
-    getYear(): number {
-        return 200;
+    public getResult(): number {
+        return +this.a * +this.b;
     }
 }
+
+const mNum = new Multiply<number>(10, 5);
+console.log('Number: ', mNum.getResult());
+
+const mStr = new Multiply<string>('50', '60');
+console.log('String: ', mStr.getResult());
 
