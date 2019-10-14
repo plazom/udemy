@@ -1,25 +1,17 @@
-const arr: [number, string] = [1, '2'];
+type User = {name: string, age: number};
 
-type User = {name: string, age: number, getJobs: () => string[], jobs: string[], logName?: () => void};
-
-let user: User = {
+const user: User = {
     name: 'WFM',
-    age: 50,
-    jobs: ['a', 'b'],
-    getJobs(): string[] {
-        return this.jobs;
-    },
-    logName(): void {
-        console.log(this.name);
-    }
+    age: 20
 };
 
+function logUser(user: User): void {
+    console.log(user.name + ' ' + user.age);
+}
 
-let user2: User = {
-    name: 'Max',
-    age: 30,
-    jobs: ['2'],
-    getJobs(): string[] {
-        return this.jobs;
-    }
-};
+logUser(user);
+
+
+let variable: any;
+variable = 1;
+variable = '';

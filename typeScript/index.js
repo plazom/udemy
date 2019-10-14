@@ -1,20 +1,13 @@
-var arr = [1, '2'];
+"use strict";
 var user = {
     name: 'WFM',
-    age: 50,
-    jobs: ['a', 'b'],
-    getJobs: function () {
-        return this.jobs;
-    },
-    logName: function () {
-        console.log(this.name);
-    }
+    age: 20
 };
-var user2 = {
-    name: 'Max',
-    age: 30,
-    jobs: ['2'],
-    getJobs: function () {
-        return this.jobs;
-    }
-};
+function logUser(user) {
+    console.log(user.name + ' ' + user.age);
+}
+logUser(user);
+var variable;
+variable = 1;
+variable = '';
+//# sourceMappingURL=index.js.map
