@@ -5,18 +5,45 @@ class User {
     constructor(public name: string, public job: string) {
     }
 
-    private getAge(): number {
-        return this.age;
+    public getAge(): string {
+        return this.age + '';
+    }
+}
+
+class WFM extends User {
+    constructor(job: string) {
+        super('WFM', job);
+        this.age = 100;
     }
 
-    public setTitle(title: boolean) {
-        console.log(this.isTeacher);
-        this.isTeacher = title;
-        console.log(this.isTeacher);
-        console.log(this.getAge());
+    getAge(): string {
+        return 'Hello ' + this.age;
     }
-
 }
 
 const user = new User('WFM', 'Frontend');
-user.setTitle(false);
+const wfm = new WFM('Frontend');
+
+
+abstract class Car {
+    model: string;
+    year: number = 2010;
+
+    abstract logInfo(info: string): void;
+
+    getCarYear(): number {
+        return this.year;
+    }
+}
+
+class Mercedes extends Car {
+    logInfo(info: string): void {
+        console.log(info);
+    }
+}
+
+const car = new Mercedes();
+console.log(car);
+car.logInfo('Info');
+console.log(car.getCarYear());
+
