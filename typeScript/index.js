@@ -1,13 +1,11 @@
 "use strict";
-var user = {
-    name: 'WFM',
-    age: 20
-};
-function logUser(user) {
-    console.log(user.name + ' ' + user.age);
-}
-logUser(user);
-var variable;
-variable = 1;
-variable = '';
-//# sourceMappingURL=index.js.map
+var Job;
+(function (Job) {
+    Job[Job["Frontend"] = 0] = "Frontend";
+    Job[Job["Backend"] = 50] = "Backend";
+    Job[Job["Designer"] = 51] = "Designer";
+})(Job || (Job = {}));
+var job = Job.Backend;
+console.log(job);
+var job2 = Job.Designer;
+console.log(job2);

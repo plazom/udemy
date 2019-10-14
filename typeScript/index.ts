@@ -1,17 +1,21 @@
-type User = {name: string, age: number};
-
-const user: User = {
-    name: 'WFM',
-    age: 20
-};
-
-function logUser(user: User): void {
-    console.log(user.name + ' ' + user.age);
+enum Job {
+    Frontend,
+    Backend = 50,
+    Designer
 }
 
-logUser(user);
+const job: Job = Job.Backend;
+console.log(job);
 
+const job2: Job = Job.Designer;
+console.log(job2);
 
-let variable: any;
-variable = 1;
-variable = '';
+function throwNewError(err: string): never {
+    throw new Error(err);
+}
+
+let newVar;
+newVar = null;
+
+let myNumber: number | null = 20;
+myNumber = null;
