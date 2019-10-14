@@ -1,20 +1,20 @@
-// function getMyAge(age: number, prefix: string = 'WFM-'): string {
-//     return prefix + age;
-// }
-//
-// function consoleLog(str: string): void {
-//     console.log(str);
-// }
-//
-// consoleLog('Test string');
-// console.log(getMyAge(40));
-var testFunc = function () { return 1 + 1; };
-var testFunc2 = function () {
-    return 1 + 1;
+var arr = [1, '2'];
+var user = {
+    name: 'WFM',
+    age: 50,
+    jobs: ['a', 'b'],
+    getJobs: function () {
+        return this.jobs;
+    },
+    logName: function () {
+        console.log(this.name);
+    }
 };
-var mySum;
-function sum(num1, num2) {
-    return num1 + num2;
-}
-mySum = sum;
-console.log(mySum(15, 10));
+var user2 = {
+    name: 'Max',
+    age: 30,
+    jobs: ['2'],
+    getJobs: function () {
+        return this.jobs;
+    }
+};

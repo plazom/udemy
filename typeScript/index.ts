@@ -1,26 +1,25 @@
-// function getMyAge(age: number, prefix: string = 'WFM-'): string {
-//     return prefix + age;
-// }
-//
-// function consoleLog(str: string): void {
-//     console.log(str);
-// }
-//
-// consoleLog('Test string');
+const arr: [number, string] = [1, '2'];
 
-// console.log(getMyAge(40));
+type User = {name: string, age: number, getJobs: () => string[], jobs: string[], logName?: () => void};
 
-const testFunc = () => 1 + 1;
-const testFunc2 = function () {
-    return 1 + 1;
-}
+let user: User = {
+    name: 'WFM',
+    age: 50,
+    jobs: ['a', 'b'],
+    getJobs(): string[] {
+        return this.jobs;
+    },
+    logName(): void {
+        console.log(this.name);
+    }
+};
 
-let mySum: (a: number, b: number) => number;
 
-function sum(num1: number, num2: number): number {
-    return num1 + num2;
-}
-
-mySum = sum;
-
-console.log(mySum(15, 10));
+let user2: User = {
+    name: 'Max',
+    age: 30,
+    jobs: ['2'],
+    getJobs(): string[] {
+        return this.jobs;
+    }
+};
