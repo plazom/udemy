@@ -1,25 +1,25 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
 
     context: path.join(__dirname, 'src'),
-    entry: {
-        index: './index',
-        shop: './shop',
-        profile: './profile',
-        vendor: ['jquery', 'lodash']
-    },
+    entry: './index',
 
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: '[name].js'
+        filename: 'bundle.js'
     },
 
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: ['common', 'vendor'],
-            minChunks: 2
-        })
-    ]
+    resolve: {
+        extensions: ['.ts', '.js']
+    },
+
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                loader: 'awesome-typescript-loader'
+            }
+        ]
+    }
 };
