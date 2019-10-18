@@ -1,12 +1,14 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
 
     context: path.join(__dirname, 'src'),
     entry: {
         index: './index',
-        shop: './shop'
+        shop: './shop',
+        profile: './profile',
+        vendor: ['jquery', 'lodash']
     },
 
     output: {
@@ -15,10 +17,9 @@ module.exports = {
     },
 
     plugins: [
-        new HtmlWebpackPlugin({
-            title: 'Application title 01',
-            hash: true,
-            template: './template.html'
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ['common', 'vendor'],
+            minChunks: 2
         })
     ]
 };
