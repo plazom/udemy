@@ -15,17 +15,19 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
-                // use: ExtractTextPlugin.extract({
-                //     fallback: 'style-loader',
-                //     use: 'css-loader'
-                // })
+                test: /\.less$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'less-loader']
+                })
             }
         ]
     },
-    //
-    // plugins: [
-    //     new ExtractTextPlugin('[name].css')
-    // ]
+
+    plugins: [
+        new ExtractTextPlugin({
+            filename: 'styles.css',
+            allChunks: true
+        })
+    ]
 };
