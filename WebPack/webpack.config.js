@@ -1,25 +1,31 @@
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 
 module.exports = {
-
     context: path.join(__dirname, 'src'),
-    entry: './index',
-
+    entry: {
+        index: './index'
+    },
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js'
-    },
-
-    resolve: {
-        extensions: ['.ts', '.js']
+        filename: '[name].js'
     },
 
     module: {
         rules: [
             {
-                test: /\.ts$/,
-                loader: 'awesome-typescript-loader'
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+                // use: ExtractTextPlugin.extract({
+                //     fallback: 'style-loader',
+                //     use: 'css-loader'
+                // })
             }
         ]
-    }
+    },
+    //
+    // plugins: [
+    //     new ExtractTextPlugin('[name].css')
+    // ]
 };
