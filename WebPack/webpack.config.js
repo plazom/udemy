@@ -1,16 +1,14 @@
 const path = require('path');
 
 module.exports = {
-    context: path.resolve(__dirname, 'src'),
+    context: path.join(__dirname, 'src'),
 
-    entry: {
-        index: './Home',
-        shop: './Shop',
-        profile: './Profile'
-    },
+    entry: './a',
 
     output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, 'dist')
-    }
+        path: path.join(__dirname, 'dist'),
+        filename: 'bundle.js'
+    },
+
+    devtool: 'source-map'
 };
