@@ -1,25 +1,24 @@
 const path = require('path');
-const webpack = require('webpack');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
     context: path.join(__dirname, 'src'),
-    entry: './init.js',
+    entry: {
+        index: './index',
+        shop: './shop'
+    },
 
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
 
     plugins: [
-        new webpack.DefinePlugin({
-            VERSION: JSON.stringify('0.0.2'),
-            PRODUCTION: false,
-            HTML5_SUPPORT: true
-        }),
-        new webpack.ProvidePlugin({
-            myJquery: 'jquery'
+        new HtmlWebpackPlugin({
+            title: 'Application title 01',
+            hash: true,
+            template: './template.html'
         })
     ]
 };
