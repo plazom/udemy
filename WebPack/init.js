@@ -1,4 +1,3 @@
-import './a.js';
-import './b.js';
+import * as $ from 'jquery';
 
-console.log('./init');
+$('body').html('Webpack init with npm!');
