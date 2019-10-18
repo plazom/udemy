@@ -1,9 +1,6 @@
-import $ from 'jquery';
+function init() {
 
-function StartApplication(someParams) {
-    console.log(someParams);
-    $('body').html(someParams);
+    myJquery('body').html(VERSION);
+
+
 }
-
-
-StartApplication('Hello world');

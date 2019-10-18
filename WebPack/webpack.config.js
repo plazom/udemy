@@ -13,6 +13,13 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.optimize.UglifyJsPlugin()
+        new webpack.DefinePlugin({
+            VERSION: JSON.stringify('0.0.2'),
+            PRODUCTION: false,
+            HTML5_SUPPORT: true
+        }),
+        new webpack.ProvidePlugin({
+            myJquery: 'jquery'
+        })
     ]
 };
