@@ -1,1 +1,0 @@
-const hiddenConst = 100;
