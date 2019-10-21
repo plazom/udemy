@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "strip-loader": "^0.1.2",
+    "file-loader": "^0.10.1",
     "webpack": "^2.2.1"
   }
 }

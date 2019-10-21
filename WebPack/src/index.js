@@ -1,6 +1,8 @@
-alert(1);
-console.warn('debug');
-console.log('more debug');
+import logo from './img/webpack.png';
 
-var a = 1;
-var b = 2;
+// console.log(logo);
+
+let img = document.createElement('img');
+img.setAttribute('src', logo);
+
+document.body.appendChild(img);
