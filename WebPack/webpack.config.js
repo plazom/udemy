@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
@@ -9,13 +10,9 @@ module.exports = {
         filename: 'bundle.js'
     },
 
-    module: {
-        rules: [{
-            test: /\.png$/,
-            loader: 'file-loader',
-            options: {
-                name: '[path][name].[ext]?[hash]'
-            }
-        }]
-    }
+    plugins: [
+        new HtmlPlugin({
+            title: 'Webpack dev server'
+        })
+    ]
 };
