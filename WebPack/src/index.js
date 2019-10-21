@@ -1,4 +1,4 @@
-import './styles.less';
+import * as noExport from './no-export';
 
-console.log('index.js');
-
+console.log($);
+console.log(noExport);
