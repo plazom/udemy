@@ -12,18 +12,7 @@ function createSubscribe(name) {
     }
 }
 
-function delay(ms = 1000) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(ms);
-        }, ms);
-    });
-}
-
-//delay(3000).then(() => {
-//    console.log('Resolved!');
-//});
-
-const p$ = Rx.Observable.fromPromise(delay(4000));
-
-p$.subscribe(createSubscribe('fromPromise'))
+Rx.Observable.fromEvent(document.querySelector('input'), 'keyup')
+    //.map(x => x.target.value)
+    .pluck('target', 'value')
+    .subscribe(createSubscribe('map'));
