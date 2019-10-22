@@ -12,8 +12,18 @@ function createSubscribe(name) {
     }
 }
 
-//const set = new Set([1, 2, 3, '4', '5', {id: 6}]);
-const map = new Map([[1, 2], [3, 4], [5, 6]]);
+function delay(ms = 1000) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(ms);
+        }, ms);
+    });
+}
 
-Rx.Observable.from(map)
-    .subscribe(createSubscribe('from'));
+//delay(3000).then(() => {
+//    console.log('Resolved!');
+//});
+
+const p$ = Rx.Observable.fromPromise(delay(4000));
+
+p$.subscribe(createSubscribe('fromPromise'))
