@@ -1,15 +1,24 @@
-var button = document.querySelector('button');
+function createSubscribe(name) {
+    return {
+        next(x) {
+            console.log(name, ': ', x);
+        },
+        error(err) {
+            console.log('Error: ', x);
+        },
+        complete() {
+            console.log(name, ' completed');
+        }
+    }
+}
 
-var btn$ = Rx.Observable.fromEvent(button, 'click');
+//Rx.Observable.interval(500)
+//    .take(15)
+//    .subscribe(createSubscribe('interval'));
+//
+//Rx.Observable.timer(4000, 500)
+//    .take(10)
+//    .subscribe(createSubscribe('timer'));
 
-btn$.subscribe(function(e) {
-    console.log(e);
-});
-
-Rx.Observable.fromEvent(document.querySelector('input'), 'keyup')
-    .subscribe(e => console.log(e));
-
-Rx.Observable.fromEvent(document, 'mousemove')
-    .subscribe(e => {
-        document.querySelector('h1').innerHTML = `X: ${e.clientX}, Y: ${e.clientY}`;
-    });
+Rx.Observable.range(3, 6)
+    .subscribe(createSubscribe('range'));
