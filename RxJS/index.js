@@ -12,13 +12,8 @@ function createSubscribe(name) {
     }
 }
 
-//Rx.Observable.interval(500)
-//    .take(15)
-//    .subscribe(createSubscribe('interval'));
-//
-//Rx.Observable.timer(4000, 500)
-//    .take(10)
-//    .subscribe(createSubscribe('timer'));
+//const set = new Set([1, 2, 3, '4', '5', {id: 6}]);
+const map = new Map([[1, 2], [3, 4], [5, 6]]);
 
-Rx.Observable.range(3, 6)
-    .subscribe(createSubscribe('range'));
+Rx.Observable.from(map)
+    .subscribe(createSubscribe('from'));
