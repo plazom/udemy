@@ -12,12 +12,11 @@ function createSubscribe(name) {
     }
 }
 
-//Rx.Observable.interval(500)
-//    .skipWhile(x => x < 5)
-//    .takeWhile(x => x < 13)
-//    .subscribe(createSubscribe('takeWhile'));
+//Rx.Observable.fromEvent(document.querySelector('input'), 'keyup')
+//    .map(e => e.target.value)
+//    .distinct()
+//    .subscribe(createSubscribe('debounceTime'));
 
-Rx.Observable.interval(500)
-    .skipUntil(Rx.Observable.timer(3000))
-    .takeUntil(Rx.Observable.timer(5000))
-    .subscribe(createSubscribe('skipUntil'));
+Rx.Observable.from([1, 2, 3, 3, 3, 5, 5, 1, 1, 99, 99, 2, 4, 6])
+    .distinctUntilChanged()
+    subscribe(createSubscribe('from'))
