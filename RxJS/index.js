@@ -13,7 +13,7 @@ function createSubscribe(name) {
 }
 
 
-Rx.Observable.interval(1000)
-    .buffer(Rx.Observable.fromEvent(document, 'click'))
-    .map(x => x.length)
-    .subscribe(createSubscribe('buffer'));
+Rx.Observable.range(1, 3)
+    .map(x => x + 1)
+    .let(observer => observer.map(x => x * x))
+    .subscribe(createSubscribe('let'));
