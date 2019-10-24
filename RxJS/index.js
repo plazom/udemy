@@ -4,7 +4,7 @@ function createSubscribe(name) {
             console.log(name, ': ', x);
         },
         error(err) {
-            console.log('Error: ', x);
+            console.log(name, ': ', x);
         },
         complete() {
             console.log(name, ': Completed.');
@@ -12,14 +12,8 @@ function createSubscribe(name) {
     }
 }
 
+const s1$ = Rx.Observable.throw(new Error('Что-то пошло не так!'));
+const s2$ = Rx.Observable.interval(500).take(2);
 
-const t1$ = Rx.Observable.timer(1000, 2000);
-const t2$ = Rx.Observable.timer(2000, 2000);
-const t3$ = Rx.Observable.timer(3000, 2000);
-const t4$ = Rx.Observable.timer(4000, 2000);
-
-Rx.Observable
-    .combineLatest(t1$, t2$, t3$, t4$)
-    .take(10)
-    .subscribe(createSubscribe('combineLatest'));
-
+s1$.onErrorResumeNext(s2$)
+    .subscribe(createSubscribe('onErrorResumeNext'));
