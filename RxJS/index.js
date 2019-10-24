@@ -12,8 +12,12 @@ function createSubscribe(name) {
     }
 }
 
-const s1$ = Rx.Observable.throw(new Error('Что-то пошло не так!'));
-const s2$ = Rx.Observable.interval(500).take(2);
+const subject$ = new Rx.AsyncSubject();
 
-s1$.onErrorResumeNext(s2$)
-    .subscribe(createSubscribe('onErrorResumeNext'));
+
+subject$.next(1);
+subject$.next('WFM');
+subject$.complete();
+
+subject$.subscribe(createSubscribe('async'));
+
