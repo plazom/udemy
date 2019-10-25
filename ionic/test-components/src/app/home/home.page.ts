@@ -6,7 +6,8 @@ import {ActionSheetController} from '@ionic/angular';
   //templateUrl: 'action-sheet.component.html',
   //templateUrl: 'checkbox-radio.component.html',
   //templateUrl: 'list.component.html',
-  templateUrl: 'card.component.html',
+  //templateUrl: 'card.component.html',
+  templateUrl: 'button.component.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
