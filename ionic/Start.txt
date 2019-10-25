@@ -1,0 +1,10 @@
+﻿install node.js
+npm i ionic -g
+ionic info
+ionic start myProject tabs | sideMenu | blank
+inside folder myProject run ionic serve
+in browser url http://localhost:8100
+npm i @ionic/lab -g (можно посмотреть как будет выглядеть проект на android, iphone, windowsphone)
+//npm install semver
+ionic lab
+in browser url http://localhost:8101
