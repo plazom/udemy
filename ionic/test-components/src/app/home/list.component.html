@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      List component
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+		<ion-list-header>List header 1</ion-list-header>
+			<ion-item>
+				Text 1
+			</ion-item>
+			<ion-item>
+				<ion-button>Button 1</ion-button>
+			</ion-item>
+			<ion-item>
+				<ion-label>Label 3</ion-label>
+			</ion-item>
+			<ion-item>
+				<ion-input></ion-input>
+			</ion-item>					
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>List header 2</ion-list-header>
+		<ion-item-sliding>
+			<ion-item>
+				<ion-label>Text 1</ion-label>
+			</ion-item>
+			<ion-item-options side="end">
+				<ion-item-option>Share</ion-item-option>
+			</ion-item-options>
+			
+		</ion-item-sliding>
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>Messages</ion-list-header>	
+			<ion-item>
+				<ion-avatar slot="start">
+					<img src="https://klike.net/uploads/posts/2018-10/1539499416_1.jpg"/>
+				</ion-avatar>
+				<ion-label>
+					<h2>Roman</h2>
+					<h3>0734</h3>
+					<p>Hi! How are you?</p>
+				</ion-label>
+			</ion-item>
+			
+			<ion-item>
+				<ion-avatar slot="end">
+					<img src="https://klike.net/uploads/posts/2018-10/1539499416_1.jpg"/>
+				</ion-avatar>
+				<ion-label>
+					<h2>Roman 2</h2>
+					<h3>07342</h3>
+					<p>Hi! How are you? 2</p>
+				</ion-label>
+			</ion-item>			
+	</ion-list>
+
+</ion-content>
