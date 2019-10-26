@@ -9,7 +9,8 @@ import {ActionSheetController} from '@ionic/angular';
   //templateUrl: 'card.component.html',
   //templateUrl: 'button.component.html',
 	//templateUrl: 'grid.component.html',
-	templateUrl: 'select.component.html',
+	//templateUrl: 'select.component.html',
+	templateUrl: 'fab.component.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
