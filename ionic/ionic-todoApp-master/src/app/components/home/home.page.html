@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Todo App </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-button color="primary" expand="full" (click)="add()">Add note</ion-button>
+  <ion-list>
+    <ion-list-header>Notes</ion-list-header>
+    <ion-item-sliding *ngFor="let note of notes;">
+      <ion-item>
+        <ion-label>
+          <h2>{{note.title || '-'}}</h2>
+          <h3>{{note.text || '-'}}</h3>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="primary" (click)="edit(note)">Edit</ion-item-option>
+         <ion-item-option color="danger" (click)="delete(note)">Delete</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>upsert-note</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form (ngSubmit)="submit()">
+  <ion-item>
+    <ion-label>Title</ion-label>
+    <ion-input type="text" name="title" [(ngModel)]="note.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Text</ion-label>
+    <ion-textarea name="text" [(ngModel)]="note.text"></ion-textarea>
+  </ion-item>
+  <ion-button color="primary" expand="full" type="submit">Add/Edit</ion-button>
+</form>
+</ion-content>
